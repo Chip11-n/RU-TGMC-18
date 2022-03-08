@@ -257,9 +257,9 @@
 //is in the other string at the same spot (assuming it is not a replace char).
 //This is used for fingerprints
 	var/newtext = text
-	if(lentext(text) != lentext(compare))
+	if(length(text) != length(compare))
 		return FALSE
-	for(var/i in 1 to lentext(text)-1)
+	for(var/i in 1 to length(text)-1)
 		var/a = copytext(text, i, i + 1)
 		var/b = copytext(compare, i, i + 1)
 //if it isn't both the same letter, or if they are both the replacement character
@@ -280,7 +280,7 @@
 	if(!text || !character)
 		return 0
 	var/count = 0
-	for(var/i in 1 to lentext(text))
+	for(var/i in 1 to length(text))
 		var/a = copytext(text, i, i + 1)
 		if(a == character)
 			count++
@@ -290,8 +290,8 @@
 //Used in preferences' SetFlavorText and human's set_flavor verb
 //Previews a string of len or less length
 /proc/TextPreview(string, length = 40)
-	if(lentext(string) <= length)
-		if(!lentext(string))
+	if(length(string) <= length)
+		if(!length(string))
 			return "\[...\]"
 		else
 			return string

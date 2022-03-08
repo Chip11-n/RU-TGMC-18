@@ -124,13 +124,14 @@ datum/ammo/bullet/machinegun/walker/New()
 	hud_state = "rocket_fire"
 	flags_ammo_behavior = AMMO_ROCKET|AMMO_INCENDIARY|AMMO_EXPLOSIVE
 	damage_type = BURN
+	var/datum/effect_system/smoke_spread/phosphorus/smoke
 /datum/ammo/rocket/wp/New()
 	..()
 	accuracy_var_low = 7
 	accurate_range = 15
 	damage = 120
 	max_range = 20
-
+	smoke = new(src)
 /datum/ammo/rocket/wp/drop_flame(turf/T, radius = 3) //~Art updated fire.
 	if(!T || !isturf(T))
 		return

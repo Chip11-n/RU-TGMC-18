@@ -77,7 +77,7 @@
 	flags_inv_hide = HIDEFACE|HIDELOWHAIR
 	flags_armor_protection = FACE
 
-	/obj/item/clothing/mask/bandanna/verb/toggle()
+	verb/toggle()
 		set category = "Object"
 		set name = "Adjust bandanna"
 		set src in usr
